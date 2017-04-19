@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="my-app">
+	
+<head>
+	<title>My Javascript Calculator</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	<script src="main.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+
+	<input type="number" ng-model="numbers.num1" />
+	<input type="number" ng-model="numbers.num2" />
+
+	<button ng-click="add();">+</button>
+	<button ng-click="subtract();">-</button>
+	<button ng-click="multiply();">*</button>
+	<button ng-click="divide();">/</button>
+
+	<p>{{results}}</p>
+
+</body>
+</html>
