@@ -1,16 +1,22 @@
 require("dotenv").config();
 
 var express = require("express");
-var app = express();
+var app = express(); 
 
 app.get("/", (request, respond)=>{
-	respond.json({
-		"user": process.env.DB_USER,
-		"pass": process.env.DB_PASS
-	});
-
+	if (process.env.NODE_ENV == 'dev'){
+		respond.json({
+			"user": process.env.DB_USER,
+			"pass": process.env.DB_PASS
+		});
+	}else{
+		respond.json({
+			"user": "Does not exist",
+			"pass": "User does not exist"
+		});
+	}
 });
 
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
 
 console.log("Server is running");
