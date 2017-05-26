@@ -4,8 +4,8 @@ var express = require("express"),
 	ejs = require("ejs"),
 	id = require("uuid/v4"),
 	bcrypt = require("bcrypt-nodejs"),
-	app = express(),
-	User = require("./user");
+	User = require("./user"),
+	app = express();
 
 var currentUser;
 
